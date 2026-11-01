@@ -13,7 +13,8 @@ const TAGS = /^(new|live class|free content|tests?|videos?|notes|recorded|bestse
   const page = await ctx.newPage();
   await page.goto(STORE, { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForSelector('text=/Get this course/i', { timeout: 30000 }).catch(() => {});
-  for (let i = 0; i < 6; i++) { await page.mouse.wheel(0, 1500); await page.waitForTimeout(500); }
+  for (let i = 0; i < 20; i++) { await page.mouse.wheel(0, 600); await page.waitForTimeout(400); }
+  await page.evaluate(() => window.scrollTo(0, 0)); await page.waitForTimeout(800);
 
   // one entry per "Get this course" button; prefer the cards under the "Popular courses" heading
   const cards = await page.evaluate(({ tagsSrc }) => {
@@ -27,7 +28,12 @@ const TAGS = /^(new|live class|free content|tests?|videos?|notes|recorded|bestse
       while (card.parentElement && !(card.querySelector('img') || /url\(/.test(getComputedStyle(card).backgroundImage))) card = card.parentElement;
       if (seen.has(card)) return; seen.add(card);
       const img = card.querySelector('img');
-      let image = img ? (img.currentSrc || img.src || img.getAttribute('data-src')) : '';
+      const real = u => u && !/^data:/.test(u) ? u : '';
+      let image = '';
+      if (img) {
+        const ss = (img.getAttribute('srcset') || img.getAttribute('data-srcset') || '').split(',').map(s => s.trim().split(' ')[0]).filter(Boolean).pop();
+        image = real(img.currentSrc) || real(img.src) || real(img.getAttribute('data-src')) || real(ss) || '';
+      }
       if (!image) { const m = /url\("?(.*?)"?\)/.exec(getComputedStyle(card).backgroundImage); image = m ? m[1] : ''; }
       const lines = card.innerText.split('\n').map(s => s.trim()).filter(Boolean);
       const tags = [...new Set([...card.querySelectorAll('*')].filter(e => !e.children.length && TAGS.test(e.textContent.trim())).map(e => e.textContent.trim()))];
@@ -43,7 +49,8 @@ const TAGS = /^(new|live class|free content|tests?|videos?|notes|recorded|bestse
   }, { tagsSrc: TAGS.source });
 
   let list = cards.some(c => c.popular) ? cards.filter(c => c.popular) : cards;
-  list = list.slice(0, MAX);
+  const seenKey = new Set();   // the same course can appear in several sections
+  list = list.filter(c => { const k = c.href || c.title; if (seenKey.has(k)) return false; seenKey.add(k); return true; }).slice(0, MAX);
 
   // open each course to get its real buy link, full name, description and full-size thumbnail
   for (const c of list) {
@@ -69,18 +76,22 @@ const TAGS = /^(new|live class|free content|tests?|videos?|notes|recorded|bestse
         });
         await p.close();
         if (d.title && d.title.length > (c.title || '').replace(/\.\.\.|…$/, '').length && !/^masters? ?cave$/i.test(d.title.trim())) c.title = d.title.trim();
-        if (!c.image && d.image) c.image = d.image;
+        if ((!c.image || /^data:/.test(c.image)) && d.image) c.image = d.image;
         if (d.text) c.text = d.text.trim();
       }
     } catch (e) { c.url = c.url || STORE; }
   }
   await browser.close();
 
+  const seenUrl = new Set();
+  list = list.filter(c => { if (seenUrl.has(c.url)) return false; seenUrl.add(c.url); return true; });
+  const unwrap = u => { try { let x = new URL(u); for (let i = 0; i < 3; i++) { const inner = x.searchParams.get('url'); if (!inner) break; x = new URL(inner, x.origin); } return x.href; } catch (e) { return u; } };
+  const clean = t => (t || '').replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, '').split('\n').map(s => s.trim()).filter(Boolean).join(' · ').replace(/\s+/g, ' ').replace(/: · /g, ': ');
   const num = s => s ? +String(s).replace(/[^\d.]/g, '') : null;
   const out = list.filter(c => c.title).map(c => {
     const ps = (c.prices || []).map(num).filter(n => n !== null);
     const price = num(c.price), mrp = ps.length > 1 ? Math.max(...ps) : null;
-    return { title: c.title.replace(/\s+/g, ' ').trim(), text: (c.text || c.coupon || '').slice(0, 160), image: c.image || '', url: c.url,
+    return { title: c.title.replace(/\s+/g, ' ').trim(), text: clean(c.text).slice(0, 200), image: c.image && !/^data:/.test(c.image) ? unwrap(c.image) : '', url: c.url,
       price, mrp: mrp && mrp > price ? mrp : null, badge: c.tags.find(t => /new|popular|best|trend/i.test(t)) ? c.tags.find(t => /new|popular|best|trend/i.test(t)).toUpperCase() : '',
       tags: c.tags.filter(t => !/^new$/i.test(t)), coupon: c.coupon };
   });
