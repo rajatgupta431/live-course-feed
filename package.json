@@ -1,0 +1,2 @@
+{ "name": "masterscave-course-feed", "private": true, "scripts": { "scrape": "node scrape.js > courses.json" },
+  "dependencies": { "playwright": "^1.48.0" } }
