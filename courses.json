@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:26:53.166Z",
+ "updated": "2026-11-04T06:29:25.234Z",
  "source": "https://www.masterscave.in/courses",
  "courses": [
   {
@@ -57,6 +57,34 @@
     "FREE CONTENT",
     "TESTS",
     "VIDEOS"
+   ],
+   "coupon": ""
+  },
+  {
+   "title": "CLAT PG/ AILET PG 2026",
+   "text": "You will have live classes and complete study material through the first week of December 2026 for CLAT PG and AILET, followed by continued access to all notes, tests, and mocks (excluding live sessio",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/2faa61d2-2140-4f1c-88d7-c8a6d791d753.jpg",
+   "url": "https://www.masterscave.in/courses/886504",
+   "price": 4760,
+   "mrp": null,
+   "badge": "",
+   "tags": [
+    "LIVE CLASS",
+    "FREE CONTENT",
+    "TESTS"
+   ],
+   "coupon": ""
+  },
+  {
+   "title": "FLASHCARDS | CASELAWS",
+   "text": "Covers Important Case laws from all units · Subject-wise Flashcards for structured preparation · Covers Recent Case Laws · Tabular Form",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/53e33bca-37cf-4f58-8a35-b027291ac1fd.png",
+   "url": "https://www.masterscave.in/courses/778539",
+   "price": 1000,
+   "mrp": null,
+   "badge": "",
+   "tags": [
+    "FREE CONTENT"
    ],
    "coupon": ""
   }
