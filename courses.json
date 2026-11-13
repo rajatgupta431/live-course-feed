@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T07:16:44.001Z",
+ "updated": "2026-11-13T06:51:06.578Z",
  "source": "https://www.masterscave.in/courses",
  "courses": [
   {
@@ -47,9 +47,9 @@
   },
   {
    "title": "PAPER I COURSE| NOTES| LIVE SESSIONS",
-   "text": "Get structured notes covering every unit of the syllabus, paired with live interactive sessions where you can ask questions, clear doubts in real time, and learn directly.",
+   "text": "",
    "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/18799e34-cffe-439f-9428-85e7b7d908a3.png",
-   "url": "https://www.masterscave.in/courses/842775",
+   "url": "https://www.masterscave.in/courses",
    "price": 1999,
    "mrp": null,
    "badge": "",
@@ -57,48 +57,6 @@
     "FREE CONTENT",
     "TESTS",
     "VIDEOS"
-   ],
-   "coupon": ""
-  },
-  {
-   "title": "UP Assistant Professor – Law | Mock Test Series",
-   "text": "Prepare strategically for the UP Assistant Professor – Law examination with 10 full-length mock tests designed to help you assess your preparation and improve your exam performance. · What’s Included:",
-   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/7619c9d8-272f-48d6-aaac-fac438b96a37.png",
-   "url": "https://www.masterscave.in/courses/920000",
-   "price": 980,
-   "mrp": null,
-   "badge": "",
-   "tags": [
-    "FREE CONTENT",
-    "TESTS"
-   ],
-   "coupon": ""
-  },
-  {
-   "title": "CLAT PG/ AILET PG 2026",
-   "text": "You will have live classes and complete study material through the first week of December 2026 for CLAT PG and AILET, followed by continued access to all notes, tests, and mocks (excluding live sessio",
-   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/2faa61d2-2140-4f1c-88d7-c8a6d791d753.jpg",
-   "url": "https://www.masterscave.in/courses/886504",
-   "price": 4760,
-   "mrp": null,
-   "badge": "",
-   "tags": [
-    "LIVE CLASS",
-    "FREE CONTENT",
-    "TESTS"
-   ],
-   "coupon": ""
-  },
-  {
-   "title": "FLASHCARDS | CASELAWS",
-   "text": "Covers Important Case laws from all units · Subject-wise Flashcards for structured preparation · Covers Recent Case Laws · Tabular Form",
-   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/53e33bca-37cf-4f58-8a35-b027291ac1fd.png",
-   "url": "https://www.masterscave.in/courses/778539",
-   "price": 1000,
-   "mrp": null,
-   "badge": "",
-   "tags": [
-    "FREE CONTENT"
    ],
    "coupon": ""
   }
