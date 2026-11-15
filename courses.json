@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-15T06:38:15.248Z",
+ "updated": "2026-11-15T18:54:47.808Z",
  "source": "https://www.masterscave.in/courses",
  "courses": [
   {
    "title": "LIVE LECTURES | RECORDED | NOTES | MOCKS | DECEMBER 2026",
-   "text": "",
-   "image": "",
-   "url": "https://www.masterscave.in/courses",
+   "text": "What You’ll Get: Daily Interactive Live Lectures · Access to Recorded Sessions after every class · Digital Study Material (non-downloadable) · 10 Full-Length & 20 Subject-wise Online Mock Tests · Stud",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/ee717dba-02e0-4e87-801c-1869a93d37cf.png",
+   "url": "https://www.masterscave.in/courses/865496",
    "price": 6000,
    "mrp": null,
    "badge": "NEW",
@@ -15,6 +15,49 @@
     "FREE CONTENT"
    ],
    "coupon": "Extra ₹ 1,000 coupon discount"
+  },
+  {
+   "title": "UP Assistant Professor – Recorded Lectures | Complete Notes + Mock Test Series",
+   "text": "Complete Law & General Paper Lectures & Notes – comprehensive, concise and exam-oriented · App-Only Access – notes are non-downloadable and can be read only through the Masters Cave app · 10 Full-Leng",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/3a7108ff-4c7e-4e69-b283-8f635f81aa9e.png",
+   "url": "https://www.masterscave.in/courses/898088",
+   "price": 4010,
+   "mrp": null,
+   "badge": "NEW",
+   "tags": [
+    "FREE CONTENT",
+    "TESTS"
+   ],
+   "coupon": "Extra ₹ 1,000 coupon discount"
+  },
+  {
+   "title": "LIVE LECTURES | RECORDED | NOTES | MOCKS | COMBINED COURSE DEC 2026 & JUNE 2027",
+   "text": "What You’ll Get: Daily Interactive Live Lectures · Access to Recorded Sessions after every class · Digital Study Material (non-downloadable) · 10 Full-Length & 20 Subject-wise Online Mock Tests · Stud",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/137088aa-37b5-460c-bd6b-9cf2a93ae8e4.png",
+   "url": "https://www.masterscave.in/courses/865501",
+   "price": 8010,
+   "mrp": null,
+   "badge": "",
+   "tags": [
+    "LIVE CLASS",
+    "FREE CONTENT",
+    "TESTS"
+   ],
+   "coupon": ""
+  },
+  {
+   "title": "UP Assistant Professor – Law | Mock Test Series",
+   "text": "Prepare strategically for the UP Assistant Professor – Law examination with 10 full-length mock tests designed to help you assess your preparation and improve your exam performance. · What’s Included:",
+   "image": "https://cdn-wl-assets.classplus.co/production/single/ebqqxc/7619c9d8-272f-48d6-aaac-fac438b96a37.png",
+   "url": "https://www.masterscave.in/courses/920000",
+   "price": 980,
+   "mrp": null,
+   "badge": "",
+   "tags": [
+    "FREE CONTENT",
+    "TESTS"
+   ],
+   "coupon": ""
   },
   {
    "title": "CLAT PG/ AILET PG 2026",
